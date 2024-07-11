@@ -230,52 +230,54 @@ body {
   font-size: 16px;
 }
 
-.line {
-  margin-top: 100px;
+.request {
   background-color: var(--accent-color);
-  width: 1920px;
-  height: 181px;
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
-
-.mail__info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.request__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.mail__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 175px;
-    height: 49px;
-    background-color: var(--white-color);
-
+.request__flex-item {
+  color: var(--white-color);
+}
+.request__flex-left {
+  color: var(--white-color);
 
 }
-.info-h2 {
-  font-size: 48px;
+.request-h4 {
+  font-family: var(--font-family);
+font-weight: 700;
+font-size: 48px;
+letter-spacing: 0.02em;
+color: var(--white-color);
+text-transform: uppercase;
+}
+.request-h5 {
+  font-family: var(--font-family);
+font-weight: 700;
+font-size: 24px;
+letter-spacing: 0.02em;
+color: var(--white-color);
+text-transform: uppercase;
+
+}
+.request__button {
+  border: none;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
   text-transform: uppercase;
   font-family: var(--font-family);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--white-color);
-  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 14px 30px;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+}
+.request__icon {
+  margin-right: 15px;
 }
 
-.info-h3 {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: 0.02em;
-  color: var(--white-color);
-  display: block;
-
-}
-.mail_logo {
-}
-.text-p {
-}
-.mail-p {
-}

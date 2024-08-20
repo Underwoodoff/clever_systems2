@@ -180,11 +180,75 @@ body {
   color: var(--gray-color);
   margin-top: 0px;
 }
+.portfolio {
+}
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.porfolio__grig_item {
+}
+.portfolio_item {
+}
+.materialboxed {
+}
+.services {
+padding: 50px;
+}
+
+.text-h2 {
+}
+.section__h2, .services__h4 {
+  color: #000;
+  text-align: center;
+}
+.section__h2 {
+  margin-bottom: 66px;
+}
+.services__h4 {
+  margin: 0 auto;
+  max-width: 172px;
+  text-transform: uppercase;
+}
+
+
+.services__grig {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+.services__grid-item {
+  padding: 59px 0px;
+  background-color: #f7f7f7;
+  width: 350px;
+
+}
+.services__icon {
+  margin: 0 auto 30px;
+}
+.text-h4 {
+}
+
+
 @media screen and (max-width: 1280px) {
   .about__grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
+  .services{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .services__grig {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .services__grid-item {
+    width: 100%;
+  }
+
 }
 @media screen and (max-width: 768px) {
   .info {
@@ -194,6 +258,12 @@ body {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
+  .services__grig {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.projects{
+  margin: 100px;
 }
 
 .project-h2 {
@@ -234,6 +304,7 @@ body {
   background-color: var(--accent-color);
   padding-top: 30px;
   padding-bottom: 40px;
+  margin: 0 0 100px;
 }
 .request__flex {
   display: flex;
@@ -265,6 +336,8 @@ text-transform: uppercase;
 
 }
 .request__button {
+  text-decoration: none;
+  color: #000;
   border: none;
   background-color: #fff;
   display: flex;
@@ -673,4 +746,130 @@ nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.b
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 997;
   display: none;
+}
+
+/* Modal */
+
+.z-depth-5, .modal {
+  -webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: 70%;
+  width: 55%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+  will-change: top, opacity;
+}
+
+.modal:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .modal {
+    width: 80%;
+  }
+}
+
+.modal h1, .modal h2, .modal h3, .modal h4 {
+  margin-top: 0;
+}
+
+.modal .modal-content {
+  padding: 24px;
+}
+
+.modal .modal-close {
+  cursor: pointer;
+}
+
+.modal .modal-footer {
+  border-radius: 0 0 2px 2px;
+  background-color: #fafafa;
+  padding: 4px 6px;
+  height: 56px;
+  width: 100%;
+  text-align: right;
+}
+
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat {
+  margin: 6px 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 999;
+  top: -25%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 125%;
+  width: 100%;
+  background: #000;
+  display: none;
+  will-change: opacity;
+}
+
+.modal.modal-fixed-footer {
+  padding: 0;
+  height: 70%;
+}
+
+.modal.modal-fixed-footer .modal-content {
+  position: absolute;
+  height: calc(100% - 56px);
+  max-height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.modal.modal-fixed-footer .modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0;
+}
+
+.modal.bottom-sheet {
+  top: auto;
+  bottom: -100%;
+  margin: 0;
+  width: 100%;
+  max-height: 45%;
+  border-radius: 0;
+  will-change: bottom, opacity;
+}
+
+
+/* gallary */
+.materialboxed {
+  display: block;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  position: relative;
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s;
+  -webkit-backface-visibility: hidden;
+}
+
+.materialboxed:hover:not(.active) {
+  opacity: .8;
+}
+
+.materialboxed.active {
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
+
+.carousel.scrolling .carousel-item .materialboxed,
+.carousel .carousel-item:not(.active) .materialboxed {
+  pointer-events: none;
 }
